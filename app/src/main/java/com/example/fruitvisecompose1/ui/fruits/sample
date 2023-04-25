@@ -1,0 +1,45 @@
+    Card(
+
+        shape = MaterialTheme.shapes.medium,
+        modifier = Modifier
+            .padding(16.dp)
+            .clickable { navController.navigate("detail_screen/"+fruits.id)}
+    ) {
+        Box {
+
+
+            Surface(
+                color=MaterialTheme.colorScheme.onSurface.copy(alpha = .3f),
+                modifier = Modifier.align(Alignment.BottomCenter),
+                contentColor = MaterialTheme.colorScheme.surface
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(4.dp)
+                ) {    for(i in 0..39){
+
+                           var item=fruit.get(i).id
+                           if(item==("$id").toInt())
+                               Column(
+                                   modifier = Modifier
+                                       .fillMaxWidth()
+                                       .padding(4.dp)
+                               ){
+                                   Text(text = "Fruit: ${fruit.get(i).name}")
+                                   Text(text = "Fat: ${fruit.get(i).nutritions?.fat}")
+                                   Text(text = "calories: ${fruit.get(i).nutritions?.calories}")
+                                   Text(text = "carbohydrates: ${fruit.get(i).nutritions?.carbohydrates}")
+                                   Text(text = "protein: ${fruit.get(i).nutritions?.protein}")
+                               }
+
+                       }
+
+                }
+            }
+
+
+        }
+
+
+    }
