@@ -89,6 +89,9 @@ dependencies {
 
         implementation("androidx.navigation:navigation-compose:$nav_version")
 
+    //Hilt ViewModel
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
 
 
 
