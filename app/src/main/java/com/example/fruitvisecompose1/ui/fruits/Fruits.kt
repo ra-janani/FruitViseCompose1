@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CutCornerShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -51,6 +52,7 @@ fun Fruits() {
                 navController = navController,
                 fruitsViewModel,
                 it.arguments?.getInt("id").toString()
+
             )
         }
     }
@@ -65,17 +67,17 @@ fun Toolbar() {
             .fillMaxWidth()
             .padding(0.dp)
             .height(56.dp)
-            .background(Color.Yellow),
+            .background(Color(0xFF22324C)),
         Arrangement.Center,
-
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             text = "List of Fruits",
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
+            color=Color(0xFFC1D6F8),
             modifier = Modifier
-                .padding(end = 10.dp)
+                .padding(10.dp)
         )
     }
 
@@ -90,34 +92,15 @@ fun FruitsCard(fruitsViewModel: FruitsViewModel = hiltViewModel(), navController
     Scaffold(
         topBar = { Toolbar() }
     ) {
-
         Column() {
-//            modifier = Modifier.padding(8.dp)
 
-            Box {
-                Surface(
-                    modifier = Modifier
-                        .height(50.dp)
-                        .width(100.dp)
-                        .padding(horizontal = 4.dp),
-                    color = Color.Yellow,
-                    //shape = CutCornerShape(10.dp),
-                    //border = BorderStroke(1.dp, Color.Green)
-                    /*color= Color.Black,
-                    modifier = Modifier.align(Alignment.Center),
-                    contentColor = MaterialTheme.colorScheme.surface*/
-                ) {}
+            Toolbar()
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
 
-//                    Text(
-//                        text = "List of Fruits",
-//                        textAlign = TextAlign.Center,
-//                        fontWeight = FontWeight.Bold
-//                    )
+            ) {
 
-
-            }
-
-            LazyColumn {
                 if (state.isEmpty()) {
                     item {
                         CircularProgressIndicator(
@@ -130,37 +113,26 @@ fun FruitsCard(fruitsViewModel: FruitsViewModel = hiltViewModel(), navController
                 }
 
                 items(state) { fruits: FruitsItemModel ->
-                    Box() {
-                        Card(
-                            shape = MaterialTheme.shapes.medium,
+                    Card(
+                        shape = RoundedCornerShape(15.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(5.dp)
+                            .clickable { navController.navigate("detail_screen/" + fruits.id) }
+                    ) {
+                        Column(
                             modifier = Modifier
-                                .padding(16.dp)
-                                .clickable { navController.navigate("detail_screen/" + fruits.id) },
+                                .fillMaxWidth()
+                                .padding(10.dp)
+                                .background(Color(0xFF85ADEF)),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            // shape= RoundedCornerShape(16.dp)
+
                         ) {
-                            Box {
-
-
-                                Surface(
-                                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = .2f),
-                                    modifier = Modifier.align(Alignment.BottomCenter),
-                                    contentColor = MaterialTheme.colorScheme.surface
-                                ) {
-                                    Column(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(4.dp)
-                                    ) {
-                                        Text(text = "Fruit: ${fruits.name}")
-                                        Text(text = "Family: ${fruits.family}")
-                                        Text(text = "Genus: ${fruits.genus}")
-                                        Text(text = "Order: ${fruits.order}")
-
-                                    }
-                                }
-
-
-                            }
-
+                            Text(text = "Fruit: ${fruits.name}")
+                            Text(text = "Family: ${fruits.family}")
+                            Text(text = "Genus: ${fruits.genus}")
+                            Text(text = "Order: ${fruits.order}")
 
                         }
                     }
@@ -171,8 +143,14 @@ fun FruitsCard(fruitsViewModel: FruitsViewModel = hiltViewModel(), navController
 
             }
         }
+
     }
-}
+    }
+
+
+
+
+
 
 
 
