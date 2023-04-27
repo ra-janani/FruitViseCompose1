@@ -1,9 +1,9 @@
-package com.example.fruityvisecompose.di
+package com.example.fruityvisecompose1.di
 
-import com.example.fruityvisecompose.remote.ApiDetails
-import com.example.fruityvisecompose.remote.ApiRequest
-import com.example.fruityvisecompose.repository.Repository
-import com.example.fruityvisecompose.repository.RepositoryImpl
+import com.example.fruityvisecompose1.remote.ApiDetails
+import com.example.fruityvisecompose1.repository.Repository
+import com.example.fruityvisecompose1.repository.RepositoryImpl
+import com.example.fruityvisecompose1.remote.ApiRequest
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides

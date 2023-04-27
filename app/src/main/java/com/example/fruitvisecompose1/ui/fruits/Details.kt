@@ -15,8 +15,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import com.example.fruityvisecompose.ui.fruits.FruitsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

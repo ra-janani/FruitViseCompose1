@@ -1,6 +1,4 @@
-package com.example.fruityvisecompose.data
+package com.example.fruityvisecompose1.data
 
-
-import com.google.gson.annotations.SerializedName
 
 class Fruits : ArrayList<FruitsItemModel>()

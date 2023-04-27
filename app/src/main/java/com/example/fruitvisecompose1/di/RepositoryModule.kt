@@ -1,4 +1,4 @@
-package com.example.fruityvisecompose.di
+package com.example.fruityvisecompose1.di
 
 abstract class RepositoryModule {
 }

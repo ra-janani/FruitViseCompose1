@@ -1,6 +1,6 @@
-package com.example.fruityvisecompose.repository
+package com.example.fruityvisecompose1.repository
 
-import com.example.fruityvisecompose.data.FruitsItemModel
+import com.example.fruityvisecompose1.data.FruitsItemModel
 
 interface Repository {
     suspend fun getFruits(): ArrayList<FruitsItemModel>

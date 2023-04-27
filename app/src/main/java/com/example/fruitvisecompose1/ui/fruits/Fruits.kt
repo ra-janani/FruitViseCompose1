@@ -1,13 +1,11 @@
-package com.example.fruityvisecompose.ui.fruits
+package com.example.fruitvisecompose1.ui.fruits
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -27,9 +25,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.fruitvisecompose1.ui.fruits.Details
-import com.example.fruitvisecompose1.ui.fruits.Screen
-import com.example.fruityvisecompose.data.FruitsItemModel
+import com.example.fruityvisecompose1.data.FruitsItemModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -139,13 +135,12 @@ fun FruitsCard(fruitsViewModel: FruitsViewModel = hiltViewModel(), navController
 
 
                 }
-
-
+            }
             }
         }
 
     }
-    }
+
 
 
 

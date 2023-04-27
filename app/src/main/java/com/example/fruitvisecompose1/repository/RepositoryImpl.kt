@@ -1,6 +1,6 @@
-package com.example.fruityvisecompose.repository
+package com.example.fruityvisecompose1.repository
 
-import com.example.fruityvisecompose.remote.ApiRequest
+import com.example.fruityvisecompose1.remote.ApiRequest
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(

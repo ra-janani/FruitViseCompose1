@@ -1,4 +1,4 @@
-package com.example.fruityvisecompose.remote
+package com.example.fruityvisecompose1.remote
 
 object ApiDetails {
 

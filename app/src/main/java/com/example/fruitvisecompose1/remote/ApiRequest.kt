@@ -1,6 +1,6 @@
-package com.example.fruityvisecompose.remote
+package com.example.fruityvisecompose1.remote
 
-import com.example.fruityvisecompose.data.FruitsItemModel
+import com.example.fruityvisecompose1.data.FruitsItemModel
 import retrofit2.http.GET
 
 interface ApiRequest {
